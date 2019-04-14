@@ -1,0 +1,119 @@
+<!-- Discussion form -->
+<div class="content">
+  {{#if err}}
+  <br>
+  <div class="card border-danger" style="width:90%;">
+    <div class="card-body text-danger">
+      <h5 class="card-title">Failed to upload</h5>
+    </div>
+  </div>
+  {{else if message}}
+  <br>
+  <div class="card border-success mx-auto" style="width:90%;text-align:center">
+    <div class="card-body text-success">
+      <h5 class="card-title">SuccessFully upload</h5>
+    </div>
+  </div>
+  {{/if}}
+
+<div class="container tab-pos">
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#1" role="tab">Discussion your problem</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#2" role="tab">Problem</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#3" role="tab">Response to your post</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" role="tablist">
+    <div class="tab-pane active" id="1" role="tabpanel">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Your Problem</h5>
+        </div>
+        <div class="card-body">
+          <form action="/discussRouter/addProblem" method="POST">
+            <input type="hidden" name="email" value="{{programmer.username}}" />
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" name="title" class="form-control" placeholder="Title">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Problem</label>
+                  <textarea class="form-control" name="problem" id="message-text"
+                    placeholder="Write your Problem.."></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i>&nbsp;Post</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="2" role="tabpanel">
+      <br>
+      {{!-- everyone problem --}}
+      {{#each problemData}}
+      <form action="/discussSolutionRouter/addSolution/{{programmer.username}}" method = "POST">
+        <div class="card">
+          <div class="card-header bg-light">
+            <input type="hidden" name="title" value="{{title}}" />{{title}}<br>
+             <label class="text-right">{{time}}</label>
+          </div>
+          <div class="card-body">
+            <input type="hidden" name="problem" value="{{problem}}" />
+            <h5 class="card-title">{{problem}}</h5>
+            <label for="message-text" class="col-form-label">Solution</label>
+            <textarea class="form-control" name="solution" id="message-text"
+              placeholder="Write your Problem.."></textarea>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;Post</button>
+          </div>
+          <div class="card-footer">
+            <h5 class="text-right"><b>~</b>&nbsp;{{email}}</h5>
+             <input type="hidden" name="email" value="{{email}}" />
+          </div>
+        </div>
+      </form>
+     {{/each}}
+    </div>
+    <div class="tab-pane" id="3" role="tabpanel">
+      <br>
+      {{#each solutionData}}
+      <div class="card">
+        <div class="card-header bg-light">
+          {{title}}<br> <label class="text-left">{{time}}</label>
+        </div>
+        <div class="card-body">
+          <label for="message-text" class="col-form-label">Problem</label>
+          <p>{{problem}}</p>
+          <label for="message-text" class="col-form-label">Solution</label>
+          <blockquote class="blockquote mb-0">
+            <p>{{solution}}</p>
+            <footer class="blockquote-footer">{{email}}</footer>
+          </blockquote>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+</div>
+
+
+<script src="../../script/external/jquery-slim.min.js"></script>
+<script src="../../script/external/tab.js"></script>
+<script src="../../script/external/util.js"></script>
+<script src="../../script/external/jquery.min.js"></script>

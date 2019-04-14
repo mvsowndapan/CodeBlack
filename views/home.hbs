@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ⓒ &nbsp; Code Black</title>
+  <link rel="stylesheet" href="../css/external/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/external/animate.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+  {{#if err}}
+ <div class="alert-danger text-center">Registration failed</div>
+  {{else if message}}
+  <div class="alert-success text-center">Registration Success</div>
+  {{/if}}
+  <!-- mainImage -->
+  <div class="container-custom">
+    <div class="centered">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</div>
+  </div>
+
+  <!-- Navbar tag -->
+  <nav class="navbar navbar-expand-lg navbar-light back" id="navbar">
+    <a class="navbar-brand" href="#">
+      <h4 class="txt custom-text-white"><b>ⓒ</b> &nbsp; Code Black</h4>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">
+            <h5 class="txt custom-text-white">Home</h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/homeRouter/about">
+            <h5 class="txt custom-text-white">About</h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <h5 class="txt custom-text-white" data-toggle="modal" data-target="#signinModal">
+              Signin
+            </h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <h5 class="txt custom-text-white" data-toggle="modal" data-target="#signupModal">
+              Signup
+            </h5>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- model -->
+
+  <!-- login -->
+  <div class="modal fade " id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content  custom-background">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <h3><strong>Ⓛⓞⓖⓘⓝ</strong></h3>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email</label>
+              <input type="text" name="username" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Password&nbsp;(atleast 8 characters)</label>
+              <input type="password" name="password" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success"><strong>Ⓛⓞⓖⓘⓝ</strong></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+
+  <!-- Register model -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <h3><b>Ⓡⓔⓖⓘⓢⓣⓔⓡ</b></h3>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email</label>
+              <input type="email" name="username" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">UserName</label>
+              <input type="text" name="name" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Age</label>
+              <input type="number" name="age" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Password</label>
+              <input type="password" name="password" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success"><strong>Ⓡⓔⓖⓘⓢⓣⓔⓡ</strong></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <!--  -->
+
+  <!-- main -->
+
+  <br><br><br>
+  <!-- caurosel slide view -->
+  <div class="container-fluid custom-carosel">
+    <h3 class="text-center fadeInDown"><b>Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</b></h3>
+    <br><br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 wow fadeInUp" data-wow-duration="2s">
+          <div class="card text-center left-custom">
+            <div class="left-right-text">Learn Something New EveryDay</div>
+          </div>
+        </div>
+        <div class="col-md-6 wow fadeIn" data-wow-duration="2s"
+          style="padding:0px;margin-top:15px;margin-bottom: 20px;">
+          <div class="container-fluid carosel-custom">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="../img/carousel/1.jpeg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../img/carousel/2.jpeg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../img/carousel/3.jpeg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../img/carousel/4.jpeg" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeInUp" data-wow-duration="2s">
+          <div class="card text-center right-custom">
+            <div class="left-right-text">Code Your way to the Top</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- codeblack panel -->
+  <br><br><br><br>
+  <h3 class="text-center wow fadeInDown"><b>Ⓒⓗⓐⓛⓛⓔⓝⓖⓔⓢ</b></h3>
+  <br><br>
+  <div class="container">
+    <div class="card-columns wow fadeInUp" data-wow-duration="2s">
+      <div class="card text-center">
+        <img class="card-img-top" src="../img/panel/quotes.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Write Your Quotes</h5>
+          <p class="card-text">Your thoughts about coding</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img" src="../img/panel/dailychallenge.png" alt="Card image">
+        <div class="card-body">
+          <h5 class="card-title">Daily Challenge</h5>
+          <p class="card-text">Face Daily Challenge to get better with Programming</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/dis-developers.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Discuss with Our Team</h5>
+          <p class="card-text">Develop your Knowledge with our Team and Learn something new EveryDay.</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/competition.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Competative Coding</h5>
+          <p class="card-text">Compete with your Friends,win points.</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/documentation.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Documents</h5>
+          <p class="card-text">Refer Documentation for better understanding</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/updates.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Our Latest Updates</h5>
+          <p class="card-text">Give Your Opinion for Developing more Features for the site</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/learncode.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Learn Code</h5>
+          <p class="card-text">Learn Something New</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/discussionblock.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Discuss with your friends</h5>
+          <p class="card-text">Develop your Knowledge with friends</p>
+        </div>
+      </div>
+      <div class="card text-center wow fadeInUp" data-wow-duration="2s">
+        <img class="card-img-top" src="../img/panel/sonthingnew.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Start your Carear</h5>
+          <p class="card-text">Learn something New</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <!-- timeline -->
+  <div class="container">
+    <h3 class="text-center"><strong>Ⓗⓞⓦ Ⓘⓣ Ⓦⓞⓡⓚⓢ</strong></h3>
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-timeline ">
+          <a href="#" class="timeline wow fadeInUp">
+            <div class="timeline-icon"><i class="fa fa-code-branch"></i></div>
+            <div class="timeline-content">
+              <h3 class="title">Learn Programming</h3>
+              <p class="description">
+                Learn C,C++,Java,Python basics to equip your Knowledge with Programming Skills.
+                Coding helps you to become a logical thinker.
+              </p>
+            </div>
+          </a>
+          <a href="#" class="timeline wow fadeInUp">
+            <div class="timeline-icon"><i class="fa fa-quote-left"></i></div>
+            <div class="timeline-content">
+              <h3 class="title">Write Quotes</h3>
+              <p class="description">
+                View the quotes of a Intelligent people in the Programming World and write your own quote for everyone
+                to tell your opinion.
+              </p>
+            </div>
+          </a>
+          <a href="#" class="timeline wow fadeInUp">
+            <div class="timeline-icon"><i class="fa fa-shield-alt"></i></div>
+            <div class="timeline-content">
+              <h3 class="title">Face Challenges</h3>
+              <p class="description">
+                Face Daily Challenges and Competative Programming to upgrade your programming skills and became an
+                Expert in it. Increase your rank among everyone.
+              </p>
+            </div>
+          </a>
+          <a href="#" class="timeline wow fadeInUp">
+            <div class="timeline-icon"><i class="fa fa-coffee"></i></div>
+            <div class="timeline-content">
+              <h3 class="title">Discuss to Learn</h3>
+              <p class="description">
+                Discuss with our Team members and your friends to learn something new and clear your doughts
+                about programming nad you can also post your comments.
+              </p>
+            </div>
+          </a>
+          <a href="#" class="timeline wow fadeInUp">
+            <div class="timeline-icon"><i class="fa fa-poo"></i></div>
+            <div class="timeline-content">
+              <h3 class="title">Strat Your Career</h3>
+              <p class="description">
+                Start Your Programming Career by choosing any one of the domain. We also provide guidence to
+                follow that domain to make you an expert in it.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="text-center">
+        <div class="footer-title">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</div>
+      </div>
+      <hr class="footer-line">
+      <div class="row ">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+          <div class="footer-widget ">
+            <div class="footer-title">Company</div>
+            <ul class="list-unstyled">
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+          <div class="footer-widget ">
+            <div class="footer-title">Quick Links</div>
+            <ul class="list-unstyled">
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 ">
+          <div class="footer-widget ">
+            <div class="footer-title">Social</div>
+            <ul class="list-unstyled">
+              <li><a href="#">Linked In</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 ">
+          <div class="footer-widget ">
+            <h3 class="footer-title">Subscribe</h3>
+            <form>
+              <div class="newsletter-form">
+                <input class="form-control" placeholder="Enter Your Email address" type="text">
+                <button class="btn btn-default btn-sm" type="submit">Go</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.footer -->
+
+  <script src="../script/external/jquery.min.js"></script>
+  <script src="../script/external/bootstrap.min.js"></script>
+  <script src="../script/external/wow.min.js"></script>
+  <script src="../script/home.js"></script>
+
+</body>
+
+</html>

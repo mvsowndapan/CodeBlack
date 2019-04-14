@@ -1,0 +1,596 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../css/external/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/code.css">
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="text-center">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</h1>
+                <br>
+                <h5 class="text-center">Ⓟⓡⓞⓖⓡⓐⓜⓜⓘⓝⓖ Ⓣⓡⓐⓒⓚ ⓛⓔⓥⓔⓛ ①</h5><br>
+                <h5 class="text-center text-success"><strong>{{programmer.username}}</strong></h5><br>
+            </div>
+            <div class="col-md-5 text-center">
+                <div id="clockdiv">
+                    <div>
+                        <span class="hours" id="hr"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes" id="min"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds" id="sec"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div><br><br>
+                <a href="/dashBoardRouter/program" class="btn btn-outline-danger">End Test</a>
+                <div id="hms" style="visibility: hidden;">02:00:00</div>
+            </div>
+        </div>
+
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#1" role="tab">1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#2" role="tab">2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#3" role="tab">3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#4" role="tab">4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#5" role="tab">5</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" role="tablist">
+            <div class="tab-pane active" id="1" role="tabpanel">
+                {{!-- 1 --}}
+                <br>
+                <div class="container">
+                    <label class="text-center text-info">Note :: Submit the Code only after you are ok with the
+                        testcases.You can submit only once.</label>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓠⓤⓔⓢⓣⓘⓞⓝ ①
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Write a Program to print this pattern</p>
+                                        <footer>*<br>**<br>***</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <br>
+                            <h5>Ⓢⓐⓜⓟⓛⓔ Ⓣⓔⓢⓣ ⓒⓐⓢⓔⓢ</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                        <div class="col-md-6">
+                            <!--  -->
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓒⓞⓓⓔ
+                                </div>
+                                <div class="card-body" style="overflow: hidden;padding: 0px 0px 0px 0px;">
+                                    <textarea id="t-1" class="tarea"></textarea>
+                                    <input type="hidden" id="u-1" value="{{programmer.username}}" />
+                                    <input type="hidden" id="p-1" value="1" />
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" id="run-1" class="btn btn-outline-info">Run</button>
+                                    <input type="hidden" id="email" value="{{programmer.username}}">
+                                    <button type="submit" id="submit-1" class="btn btn-outline-success">Submit</button>
+                                    <button id="submitResponse-1" class="btn btn-light text-success" disabled>Code
+                                        submitted.End The test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                Ⓡⓔⓢⓤⓛⓣ
+                            </div>
+                            <div class="card-body">
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p1-t-0"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p1-t-1"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p1-t-2"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {{!-- 1 --}}
+            </div>
+
+            <div class="tab-pane" id="2" role="tabpanel">
+                <br>
+                {{!-- 2 --}}
+                <div class="container">
+                    <label class="text-center text-info">Note :: Submit the Code only after you are ok with the
+                        testcases.You can submit only once.</label>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓠⓤⓔⓢⓣⓘⓞⓝ ①
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Write a Program to print this pattern</p>
+                                        <footer>*<br>**<br>***</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <br>
+                            <h5>Ⓢⓐⓜⓟⓛⓔ Ⓣⓔⓢⓣ ⓒⓐⓢⓔⓢ</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                        <div class="col-md-6">
+                            <!--  -->
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓒⓞⓓⓔ
+                                </div>
+                                <div class="card-body" style="overflow: hidden;padding: 0px 0px 0px 0px;">
+                                    <textarea id="t-2" class="tarea"></textarea>
+                                    <input type="hidden" id="u-2" value="{{programmer.username}}" />
+                                    <input type="hidden" id="p-2" value="2" />
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" id="run-2" class="btn btn-outline-info">Run</button>
+                                    <input type="hidden" id="email" value="{{programmer.username}}">
+                                    <button type="submit" id="submit-2" class="btn btn-outline-success">Submit</button>
+                                    <button id="submitResponse-2" class="btn btn-light text-success" disabled>Code
+                                        submitted.End The test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                Ⓡⓔⓢⓤⓛⓣ
+                            </div>
+                            <div class="card-body">
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p2-t-0"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p2-t-1"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p2-t-2"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {{!-- 2 --}}
+            </div>
+            <div class="tab-pane" id="3" role="tabpanel">
+                {{!-- 3 --}}
+                <br>
+                <div class="container">
+                    <label class="text-center text-info">Note :: Submit the Code only after you are ok with the
+                        testcases.You can submit only once.</label>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓠⓤⓔⓢⓣⓘⓞⓝ ①
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Write a Program to print this pattern</p>
+                                        <footer>*<br>**<br>***</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <br>
+                            <h5>Ⓢⓐⓜⓟⓛⓔ Ⓣⓔⓢⓣ ⓒⓐⓢⓔⓢ</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                        <div class="col-md-6">
+                            <!--  -->
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓒⓞⓓⓔ
+                                </div>
+                                <div class="card-body" style="overflow: hidden;padding: 0px 0px 0px 0px;">
+                                    <textarea id="t-3" class="tarea"></textarea>
+                                    <input type="hidden" id="u-3" value="{{programmer.username}}" />
+                                    <input type="hidden" id="p-3" value="3" />
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" id="run-3" class="btn btn-outline-info">Run</button>
+                                    <input type="hidden" id="email" value="{{programmer.username}}">
+                                    <button type="submit" id="submit-3" class="btn btn-outline-success">Submit</button>
+                                    <button id="submitResponse-3" class="btn btn-light text-success" disabled>Code
+                                        submitted.End The test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                Ⓡⓔⓢⓤⓛⓣ
+                            </div>
+                            <div class="card-body">
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p3-t-0"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p3-t-1"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p3-t-2"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {{!-- 3 --}}
+            </div>
+            <div class="tab-pane" id="4" role="tabpanel">
+                {{!-- 4 --}}
+                <br>
+                <div class="container">
+                    <label class="text-center text-info">Note :: Submit the Code only after you are ok with the
+                        testcases.You can submit only once.</label>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓠⓤⓔⓢⓣⓘⓞⓝ ①
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Write a Program to print this pattern</p>
+                                        <footer>*<br>**<br>***</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <br>
+                            <h5>Ⓢⓐⓜⓟⓛⓔ Ⓣⓔⓢⓣ ⓒⓐⓢⓔⓢ</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                        <div class="col-md-6">
+                            <!--  -->
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓒⓞⓓⓔ
+                                </div>
+                                <div class="card-body" style="overflow: hidden;padding: 0px 0px 0px 0px;">
+                                    <textarea id="t-4" class="tarea"></textarea>
+                                    <input type="hidden" id="u-4" value="{{programmer.username}}" />
+                                    <input type="hidden" id="p-4" value="4" />
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" id="run-4" class="btn btn-outline-info">Run</button>
+                                    <input type="hidden" id="email" value="{{programmer.username}}">
+                                    <button type="submit" id="submit-4" class="btn btn-outline-success">Submit</button>
+                                    <button id="submitResponse-4" class="btn btn-light text-success" disabled>Code
+                                        submitted.End The test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                Ⓡⓔⓢⓤⓛⓣ
+                            </div>
+                            <div class="card-body">
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p4-t-0"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p4-t-1"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p4-t-2"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {{!-- 4--}}
+            </div>
+            <div class="tab-pane" id="5" role="tabpanel">
+                {{!-- 5 --}}
+                <br>
+                <div class="container">
+                    <label class="text-center text-info">Note :: Submit the Code only after you are ok with the
+                        testcases.You can submit only once.</label>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓠⓤⓔⓢⓣⓘⓞⓝ ①
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Write a Program to print this pattern</p>
+                                        <footer>*<br>**<br>***</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <br>
+                            <h5>Ⓢⓐⓜⓟⓛⓔ Ⓣⓔⓢⓣ ⓒⓐⓢⓔⓢ</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                        <div class="col-md-6">
+                            <!--  -->
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓒⓞⓓⓔ
+                                </div>
+                                <div class="card-body" style="overflow: hidden;padding: 0px 0px 0px 0px;">
+                                    <textarea id="t-5" class="tarea"></textarea>
+                                    <input type="hidden" id="u-5" value="{{programmer.username}}" />
+                                    <input type="hidden" id="p-5" value="5" />
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" id="run-5" class="btn btn-outline-info">Run</button>
+                                    <input type="hidden" id="email" value="{{programmer.username}}">
+                                    <button type="submit" id="submit-5" class="btn btn-outline-success">Submit</button>
+                                    <button id="submitResponse-5" class="btn btn-light text-success" disabled>Code
+                                        submitted.End The test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                Ⓡⓔⓢⓤⓛⓣ
+                            </div>
+                            <div class="card-body">
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p5-t-0"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p5-t-1"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p5-t-2"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {{!-- 5 --}}
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../../script/external/jquery-slim.min.js"></script>
+    <script src="../../script/external/tab.js"></script>
+    <script src="../../script/external/util.js"></script>
+    <script src="../../script/external/jquery.min.js"></script>
+    <script src="../../script/code.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ⓒ &nbsp; Code Black</title>
+  <link rel="stylesheet" href="../css/external/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/external/animate.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- mainImage -->
+  <div class="container-custom">
+    <div class="centered">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</div>
+  </div>
+
+  <!-- Navbar tag -->
+  <nav class="navbar navbar-expand-lg navbar-light back" id="navbar">
+    <a class="navbar-brand" href="#">
+      <h4 class="txt custom-text-white"><b>ⓒ</b> &nbsp; Code Black</h4>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">
+            <h5 class="txt custom-text-white">Home</h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/homeRouter/about">
+            <h5 class="txt custom-text-white">About</h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <h5 class="txt custom-text-white" data-toggle="modal" data-target="#signinModal">
+              Signin
+            </h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <h5 class="txt custom-text-white" data-toggle="modal" data-target="#signupModal">
+              Signup
+            </h5>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- model -->
+
+  <!-- login -->
+  <div class="modal fade " id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content  custom-background">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <h3><strong>Ⓛⓞⓖⓘⓝ</strong></h3>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email</label>
+              <input type="text" name="username" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Password&nbsp;(atleast 8 characters)</label>
+              <input type="password" name="password" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success"><strong>Ⓛⓞⓖⓘⓝ</strong></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+
+  <!-- Register model -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <h3><b>Ⓡⓔⓖⓘⓢⓣⓔⓡ</b></h3>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email</label>
+              <input type="email" name="username" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">UserName</label>
+              <input type="text" name="name" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Age</label>
+              <input type="number" name="age" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Password</label>
+              <input type="password" name="password" class="form-control" style="height:20%;" id="recipient-name">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success"><strong>Ⓡⓔⓖⓘⓢⓣⓔⓡ</strong></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <!--  -->
+
+  <!-- main -->
+  <!-- profile -->
+  <div class="rela-block container-fluid profile">
+    <!-- profile -->
+    <div class="rela-block profile-card">
+      <div class="profile-pic" id="profile_pic"></div>
+      <div class="rela-block profile-name-container">
+        <div class="rela-block user-name" id="user_name">M V Sowndapan</div>
+        <div class="rela-block user-desc" id="user_description">Full Stack WebDeveloper<br>Free lancer</div>
+      </div>
+      <div class="rela-block profile-card-stats">
+        <div class="floated profile-stat works" id="num_works">4<br></div>
+        <div class="floated profile-stat occupation" id="num_followers">IT Student<br></div>
+        <div class="floated profile-stat contact" id="num_following"><br></div>
+      </div>
+    </div>
+ <br><br>
+ 
+ <!-- mywork -timeline -->
+ <div class="container">
+  <h3 class="text-center"><strong>Ⓜⓨ Ⓦⓞⓡⓚ</strong></h3>
+  <br><br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-timeline ">
+        <a href="#" class="timeline wow fadeInUp">
+          <div class="timeline-icon"><i class="fa fa-align-center"></i></div>
+          <div class="timeline-content">
+            <h3 class="title">Shadow Kingdom</h3>
+            <p class="description">
+               Online course website for Programming languages,which lead you to a better understand how to code and
+               enhance your skills. 
+            </p>
+          </div>
+        </a>
+        <a href="#" class="timeline wow fadeInUp">
+          <div class="timeline-icon"><i class="fa fa-chess-rook"></i></div>
+          <div class="timeline-content">
+            <h3 class="title">Chat Castle</h3>
+            <p class="description">
+              Online chatbot which helps students understand how the chatbot realy works by having side by side 
+              chating board(Sender and Reciever).
+            </p>
+          </div>
+        </a>
+        <a href="#" class="timeline wow fadeInUp">
+          <div class="timeline-icon"><i class="fa fa-apple-alt"></i></div>
+          <div class="timeline-content">
+            <h3 class="title">Hotel Management System</h3>
+            <p class="description">
+               Hotal Management Software which helps to provide Bill,Register Customer entry,Conferance & 
+               Room Booking facilities.
+            </p>
+          </div>
+        </a>
+        <a href="#" class="timeline wow fadeInUp">
+          <div class="timeline-icon"><i class="fa fa-shopping-bag"></i></div>
+          <div class="timeline-content">
+            <h3 class="title">E-commerce site</h3>
+            <p class="description">
+               An E-commerce website which helps to purchase products, Instead of going to the shop we can 
+               by directly using the Internet.
+            </p>
+          </div>
+        </a>
+        <a href="#" class="timeline wow fadeInUp">
+          <div class="timeline-icon"><i class="fa fa-thumbtack"></i></div>
+          <div class="timeline-content">
+            <h3 class="title">MyRemainder</h3>
+            <p class="description">
+               You can write notes and you can set that as remainder message on certain date and time. This 
+               application is very much helpfull on scheduled messageing.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <br><br>
+    <!-- footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="text-center">
+          <div class="footer-title">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</div>
+        </div>
+        <hr class="footer-line">
+        <div class="row ">
+          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+            <div class="footer-widget ">
+              <div class="footer-title">Company</div>
+              <ul class="list-unstyled">
+                <li><a href="#">About</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+            <div class="footer-widget ">
+              <div class="footer-title">Quick Links</div>
+              <ul class="list-unstyled">
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 ">
+            <div class="footer-widget ">
+              <div class="footer-title">Social</div>
+              <ul class="list-unstyled">
+                <li><a href="#">Linked In</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 ">
+            <div class="footer-widget ">
+              <h3 class="footer-title">Subscribe</h3>
+              <form>
+                <div class="newsletter-form">
+                  <input class="form-control" placeholder="Enter Your Email address" type="text">
+                  <button class="btn btn-default btn-sm" type="submit">Go</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.footer -->
+
+
+  </div>
+
+
+  <!-- mywork timeline -->
+
+  <script src="../script/external/jquery.min.js"></script>
+  <script src="../script/external/bootstrap.min.js"></script>
+  <script src="../script/external/wow.min.js"></script>
+  <script src="../script/home.js"></script>
+
+</body>
+
+</html>

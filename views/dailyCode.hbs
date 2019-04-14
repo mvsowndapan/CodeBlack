@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../css/external/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/code.css">
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="text-center">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</h1>
+                <br>
+                <h5 class="text-center">Ⓟⓡⓞⓖⓡⓐⓜⓜⓘⓝⓖ Ⓣⓡⓐⓒⓚ ⓛⓔⓥⓔⓛ ①</h5><br>
+                <h5 class="text-center text-success"><strong>{{programmer.username}}</strong></h5><br>
+            </div>
+            <div class="col-md-5 text-center">
+                <div id="clockdiv">
+                    <div>
+                        <span class="hours" id="hr"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes" id="min"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds" id="sec"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div><br><br>
+                 <a href="/dashBoardRouter/dailychallenge" class="btn btn-outline-danger">End Test</a>
+                <div id="hms" style="visibility: hidden;">00:20:00</div>
+            </div>
+        </div>
+                        {{!-- 1 --}}
+                <br>
+                <div class="container">
+                      <label class="text-center text-info">Note :: Submit the Code only after you are ok with the testcases.You can submit only once.</label>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓠⓤⓔⓢⓣⓘⓞⓝ ①
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Write a Program to print this pattern</p>
+                                        <footer>*<br>**<br>***</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <br>
+                            <h5>Ⓢⓐⓜⓟⓛⓔ Ⓣⓔⓢⓣ ⓒⓐⓢⓔⓢ</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Input:3</h5>
+                                            <p class="card-text">*<br>**<br>***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <!--  -->
+                        </div>
+                        <!--  -->
+                        <div class="col-md-6">
+                            <!--  -->
+                            <div class="card">
+                                <div class="card-header bg-success text-light">
+                                    Ⓒⓞⓓⓔ
+                                </div>
+                                <div class="card-body" style="overflow: hidden;padding: 0px 0px 0px 0px;">
+                                    <textarea id="t-1" class="tarea"></textarea>
+                                    <input type="hidden" id="u-1" value="leander" />
+                                    <input type="hidden" id="p-1" value="1" />
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" id="run-1" class="btn btn-outline-info">Run</button>
+                                    <input type="hidden" id="email" value="{{programmer.username}}">
+                                    <button type="submit" id="submit" class="btn btn-outline-success">Submit</button>
+                                    <button id="submitResponse" class="btn btn-light text-success" disabled>Code submitted.End The test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                Ⓡⓔⓢⓤⓛⓣ
+                            </div>
+                            <div class="card-body">
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p1-t-0"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p1-t-1"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p id="p1-t-2"></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                {{!--  --}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {{!-- 1 --}}
+          
+    </div>
+
+    <script src="../../script/external/jquery.min.js"></script>
+    <script src="../../script/dailycode.js"></script>
+</body>
+
+</html>

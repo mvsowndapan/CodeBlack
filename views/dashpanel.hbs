@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../css/external/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../css/paper-dashboard.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+   <link rel="stylesheet" href="../../css/general.css">
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <div class="logo">
+        <a href="#" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="../../img/dashboard/logo-small.png">
+          </div>
+        </a>
+        <p class="simple-text logo-normal">
+            {{programmer.account.name}}
+        </p>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="/">
+              <i class="fa fa-university"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="/dashBoardRouter/quotes">
+              <i class="fa fa-quote-left"></i>
+              <p>Quotes</p>
+            </a>
+          </li>
+          <li>
+            <a href="/dashBoardRouter/dailychallenge">
+              <i class="fa fa-code"></i>
+              <p>Daily Challenge</p>
+            </a>
+          </li>
+          <li>
+            <a href="/dashBoardRouter/program">
+              <i class="fa fa-laptop-code"></i>
+              <p>Programming Track</p>
+            </a>
+          </li>
+            <li>
+            <a href="/dashBoardRouter/quiz">
+              <i class="fa fa-atom"></i>
+              <p>Quiz</p>
+            </a>
+          </li>
+          <li>
+            <a href="/dashBoardRouter/discussfriends">
+              <i class="fa fa-comments"></i>
+              <p>Discussion form</p>
+            </a>
+          </li>
+          <li>
+            <a href="/dashBoardRouter/profile">
+              <i class="fa fa-poo"></i>
+              <p>Profile</p>
+            </a>
+          </li>
+          <li>
+              <a href="/logout">
+                <i class="fa fa-power-off"></i>
+                <p>Logout</p>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- main -->
+    <div class="main-panel">
+      
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo"><h5><strong>Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</strong></h5></a>
+          </div>  
+        </div>
+      </nav>
+      <!-- End Navbar -->
+
+     {{{body}}}
+    </div>
+
+
+</body>
+
+</html>

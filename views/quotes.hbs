@@ -1,0 +1,204 @@
+<!-- quotes form -->
+<div class="content">
+  {{#if err}}
+  <br>
+  <div class="card border-danger" style="width:90%;">
+    <div class="card-body text-danger">
+      <h5 class="card-title">Failed to upload</h5>
+    </div>
+  </div>
+  {{else if message}}
+  <br>
+  <div class="card border-success mx-auto" style="width:90%;text-align:center">
+    <div class="card-body text-success">
+      <h5 class="card-title">SuccessFully upload</h5>
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- Discussion form -->
+  <div class="container tab-pos">
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#1" role="tab">Write Quote</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#2" role="tab">Your Quotes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#3" role="tab">Trending Quotes</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#4" role="tab">allQuotes</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" role="tablist">
+      <div class="tab-pane active" id="1" role="tabpanel">
+        <div class="card card-user">
+          <div class="card-header">
+            <h5 class="card-title">Your Problem</h5>
+          </div>
+          <div class="card-body">
+            <form action="/quotesRouter/addQuote" method="POST">
+              <input type="hidden" name="email" value="{{programmer.username}}" />
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Quote</label>
+                    <textarea class="form-control" name="quote" placeholder="Write your Problem.."></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="update ml-auto mr-auto">
+                  <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i>&nbsp;Post</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="2" role="tabpanel">
+        <br>
+        {{!-- everyone problem --}}
+        {{#each quotes}}
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 card-quote-image">
+              <img class="card-img-top card-image" src="../../img/dashboard/logo-small.png" alt="cards image cap">
+            </div>
+            <div class="col-lg-8 col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{quote}}</h5>
+                <label>{{time}}</label>
+                <p class="card-text">{{email}}</p>
+                <label><i class="fa fa-arrow-circle-up text-success"></i> {{likes}}&nbsp;&nbsp;&nbsp;<span><i
+                      class="fa fa-arrow-circle-down text-danger"></i> {{dislikes}}</span></label>
+                {{!-- <p></p> --}}
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1" style="padding:0px 0px;">
+              <form action="/quotesRouter/likes/{{_id}}" method="POST">
+                <input type="hidden" name="email" value="{{email}}" />
+                <div class="card-body"><button class="btn btn-outline-light"><i
+                      class="fa fa-arrow-circle-up text-success like"></i></button></div>
+              </form>
+            </div>
+            <div class="col-lg-1 col-md-1" style="padding:0px 0px;">
+              <form action="/quotesRouter/dislikes/{{_id}}" method="POST">
+                <input type="hidden" name="email" value="{{email}}" />
+                <div class="card-body"><button class="btn btn-outline-light"><i
+                      class="fa fa-arrow-circle-down text-danger unlike"></i></button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{!--3  --}}
+      <div class="tab-pane" id="3" role="tabpanel">
+        <br>
+        {{!-- everyone problem --}}
+        {{#each trendingQuotes}}
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 card-quote-image">
+              <img class="card-img-top card-image" src="../../img/dashboard/logo-small.png" alt="cards image cap">
+            </div>
+            <div class="col-lg-8 col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{quote}}</h5>
+                <label>{{time}}</label>
+                <p class="card-text">{{email}}</p>
+                <label><i class="fa fa-arrow-circle-up text-success"></i> {{likes}}&nbsp;&nbsp;&nbsp;<span><i
+                      class="fa fa-arrow-circle-down text-danger"></i> {{dislikes}}</span></label>
+                {{!-- <p></p> --}}
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1" style="padding:0px 0px;">
+              <form action="/quotesRouter/likes/{{_id}}" method="POST">
+                <input type="hidden" name="email" value="{{email}}" />
+                <div class="card-body"><button class="btn btn-outline-light"><i
+                      class="fa fa-arrow-circle-up text-success like"></i></button></div>
+              </form>
+            </div>
+            <div class="col-lg-1 col-md-1" style="padding:0px 0px;">
+              <form action="/quotesRouter/dislikes/{{_id}}" method="POST">
+                <input type="hidden" name="email" value="{{email}}" />
+                <div class="card-body"><button class="btn btn-outline-light"><i
+                      class="fa fa-arrow-circle-down text-danger unlike"></i></button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{!--  --}}
+      <div class="tab-pane" id="4" role="tabpanel">
+        <br>
+        {{!--4--}}
+        {{#each allQuotes}}
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 card-quote-image">
+              <img class="card-img-top card-image" src="../../img/dashboard/logo-small.png" alt="cards image cap">
+            </div>
+            <div class="col-lg-8 col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{quote}}</h5>
+                <label>{{time}}</label>
+                <p class="card-text">{{email}}</p>
+                <label><i class="fa fa-arrow-circle-up text-success"></i> {{likes}}&nbsp;&nbsp;&nbsp;<span><i
+                      class="fa fa-arrow-circle-down text-danger"></i> {{dislikes}}</span></label>
+                {{!-- <p></p> --}}
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1" style="padding:0px 0px;">
+              <form action="/quotesRouter/likes/{{_id}}" method="POST">
+                <input type="hidden" name="email" value="{{email}}" />
+                <div class="card-body"><button class="btn btn-outline-light"><i
+                      class="fa fa-arrow-circle-up text-success like"></i></button></div>
+              </form>
+            </div>
+            <div class="col-lg-1 col-md-1" style="padding:0px 0px;">
+              <form action="/quotesRouter/dislikes/{{_id}}" method="POST">
+                <input type="hidden" name="email" value="{{email}}" />
+                <div class="card-body"><button class="btn btn-outline-light"><i
+                      class="fa fa-arrow-circle-down text-danger unlike"></i></button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{!--  --}}
+    </div>
+
+  </div>
+
+
+  <script src="../../script/external/jquery-slim.min.js"></script>
+  <script src="../../script/external/tab.js"></script>
+  <script src="../../script/external/util.js"></script>
+
+  {{!-- 
+
+  <form action="/quotesRouter/likes/{{_id}}/addQuote" method="POST">
+    <input type="hidden" name="email" value="{{programmer.username}}" />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Write your quote here...</label>
+          <textarea name="quote" class="form-control textarea"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="update ml-auto mr-auto">
+        <button type="submit" class="btn btn-success btn-round"><i class="fa fa-paper-plane"></i>&nbsp;
+          post</button>
+      </div>
+    </div>
+  </form> --}}

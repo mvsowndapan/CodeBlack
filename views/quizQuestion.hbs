@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../../css/external/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/code.css">
+  <link rel="stylesheet" href="../../css/q.css">
+  <title>Tab</title>
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="text-center">Ⓒⓞⓓⓔ Ⓑⓛⓐⓒⓚ</h1>
+        <br>
+        <h5 class="text-center">Ⓟⓡⓞⓖⓡⓐⓜⓜⓘⓝⓖ Ⓣⓡⓐⓒⓚ ⓛⓔⓥⓔⓛ ①</h5><br>
+      </div>
+      <div class="col-md-4 text-center">
+        <div id="clockdiv">
+          <div>
+            <span class="hours" id="hr"></span>
+            <div class="smalltext">Hours</div>
+          </div>
+          <div>
+            <span class="minutes" id="min"></span>
+            <div class="smalltext">Minutes</div>
+          </div>
+          <div>
+            <span class="seconds" id="sec"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+        </div>
+
+        <div id="hms" style="visibility: hidden;">01:01:00</div>
+      </div>
+      <div class="container quiz-pos">
+        <div class="row"><br><br>
+          <div class="col-md-12 col-sm-8 col-sm-offset-2">
+            <div class="loader">
+              <div id="quiz">
+
+                <div class="question bg-success text-light">
+                  <h3><span class="label label-warning text-light" id="qid">1</span>
+                    <span id="question"> How can you add a single line comment in a JavaScript?</span>
+                  </h3>
+                </div>
+                <ul>
+                  <li class="ul-li">
+                    <input class="ul-li-input" type="radio" id="f-option" name="selector" value="1">
+                    <label for="f-option" class="ul-li-label element-animation">/*-- comment --*/</label>
+                    <div class="check"></div>
+                  </li>
+
+                  <li class="ul-li">
+                    <input class="ul-li-input" type="radio" id="s-option" name="selector" value="2">
+                    <label for="s-option" class="ul-li-label element-animation">comment //</label>
+                    <div class="check">
+                      <div class="inside"></div>
+                    </div>
+                  </li>
+                  <li class="ul-li">
+                    <input class="ul-li-input" type="radio" id="t-option" name="selector" value="3">
+                    <label for="t-option" class="ul-li-label element-animation">comment [ ]</label>
+                    <div class="check">
+                      <div class="inside"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-muted">
+              <span id="answer"></span>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div id="result-of-question" class="pulse animated" style="display: none;">
+              <span id="totalCorrect" class="pull-right"></span>
+              <table class="table table-hover table-responsive">
+                <thead>
+                  <tr>
+                    <th>Question No.</th>
+                    <th>Our answer</th>
+                    <th>Your answer</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody id="quizResult"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container text-center">
+    <form action="/quizRouter/mark" method="POST">
+      <input name="username" type="hidden" value="{{programmer.username}}" />
+      <input name="quizno" type="hidden" value="{{data.level}}" />
+      <input name="status" type="hidden" value="Taken" />
+      <input name="mark" id="mark" type="number" value="" hidden/>
+      <input type="submit" class="btn btn-danger" value="Submit" />
+    </form>
+  </div>
+  <br><br>
+  <script src="../../script/external/jquery.min.js"></script>
+  <script src="../../script/quiz{{data.level}}.js"></script>
+
+</body>
+
+</html>
