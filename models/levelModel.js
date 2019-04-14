@@ -41,11 +41,11 @@ const levelSchema = mongoose.Schema({
     },
     globelPoints:{
         type:Number,
-        default:0
+        default: 0
     },
     quizPoints:{
         type: Number,
-        default: 1
+        default: 0
     },
     programPoints:{
         type: Number,
