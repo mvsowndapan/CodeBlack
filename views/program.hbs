@@ -10,12 +10,47 @@
         <a href="/dashBoardRouter/code" class="btn btn-outline-primary">Take challenge</a>
       </div>
     </div>
-    <div class="col-md-4 card">
-      <img class="card-img-top" src="../../img/dashboard/challenges/l3.jpeg" alt="Card image cap">
+    <div class="col-md-8 card">
+      {{!-- <img class="card-img-top" src="../../img/dashboard/challenges/l3.jpeg" alt="Card image cap"> --}}
       <div class="card-body">
-        <h5 class="card-title">Skill Test</h5>
-        <p class="card-text">Game Creation</p>
-        <a href="/dashBoardRouter/code" class="btn btn-outline-danger">Take challenge</a>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h5>Create a "Tic Tac Toe" Game in 'c' language</h5>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5>Interface should be like this</h5>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Upload The Game in github</h5>
+                <form action="/codeRouter/game" method="POST">
+                  <div class="form-group">
+                    <label for="exampleLink">Place your github link here..</label>
+                    <input type="link" name="link" class="form-control" placeholder="link">
+                    <input type="hidden" value="{{programmer.username}}" name="username" />
+                  </div>
+                  <button type="submit" class="btn btn-outline-info">Post</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="../../img/dashboard/1_tTQJFNpKFOOiH8dN_2tyEQ.png" alt="" class="img img-responsive">
+              <div class="card-body">
+                <h5 class="card-title">Weekly Challenge</h5>
+                <p class="card-text">Your Code will be crossed Checked</p>
+                <label class="card-text">pts</label>
+                <h4>100</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

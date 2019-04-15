@@ -11,6 +11,8 @@ const express = require('express'),
     discussSolutionRouter = require('./router/discussSolutionRouter'),
     quizRouter = require('./router/quizRouter'),
     codeRouter = require('./router/codeRouter'),
+    levelModel = require('./models/levelModel'),
+    quotesModel = require('./models/quotesModel'),
     hbs = require('hbs'),
     app = express();
 
@@ -20,19 +22,20 @@ app.listen(port, () => {
     console.log("Server Started in", process.env.NODE_ENV);
 });
 
-mongoose.connect('mongodb://root:root1234@ds239936.mlab.com:39936/codeblack', {
+mongoose.connect('mongodb://localhost:27017/codeblack', {
     useNewUrlParser: true
 }).then((data) => {
     console.log("connection sucessfull");
 }).catch((err) => {
     console.log("Connection failed");
 });
-
+// mongodb://root:root1234@ds239936.mlab.com:39936/codeblack
 
 app.disable('etag');
 middleware(app);
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
+
 // 
 hbs.registerHelper('ifCond', (v1, options) => {
     if (v1 < 4) {
@@ -40,8 +43,26 @@ hbs.registerHelper('ifCond', (v1, options) => {
     }
     return options.inverse(this);
 });
-
+hbs.registerHelper('ifMark1', (v1, options) => {
+    if (v1==1 || v1 == 2|| v1==3 || v1 == 4) {
+        return options.fn(this);
+    }
+    return options.inverse(this);
+});
+hbs.registerHelper('ifMark2', (v1, options) => {
+    if (v1==5 || v1 == 6 ||v1==8 || v1 == 7) {
+        return options.fn(this);
+    }
+    return options.inverse(this);
+});
+hbs.registerHelper('ifMark3', (v1, options) => {
+    if (v1==8 || v1==9 || v1==10) {
+        return options.fn(this);
+    }
+    return options.inverse(this);
+});
 //   
+
 app.get('/', (req, res) => {
     if (!req.user) {
         res.redirect('/login');
@@ -64,7 +85,12 @@ app.get('/login', (req, res) => {
     if (req.user) {
         res.redirect('/');
     } else {
-        res.render('home');
+        levelModel.getFirstRank((err, ranker) => {
+            quotesModel.getTrendingQuotes((err,quotes)=>{
+                console.log(ranker);
+                res.render('home',{ranker,quotes});
+            });
+        });
     }
 });
 
@@ -83,20 +109,30 @@ app.post('/register', (req, res) => {
     console.log(req.body);
     userModel.findOne({ username: req.body.username }).then(data => {
         if (req.body.username === data.username) {
-            res.render('home', { err: "not ok" });
+            levelModel.getFirstRank((err, ranker) => {
+                console.log(ranker);
+                res.render('home', { err: "not ok",ranker });
+            });
+            
         }
         else {
             console.log("enter");
             authenticate.addUser(req.body, (err, user) => {
                 if (err) {
-                    res.render('home', { err: "end" });
+                    levelModel.getFirstRank((err, ranker) => {
+                        console.log(ranker);
+                        res.render('home', { err: "not ok",ranker });
+                    });
                 } else {
                     req.logIn(user, (err, done) => {
                         if (err) {
                             // res.render('home',{err:"end"});
                             throw err;
                         } else {
-                            res.render('home', { message: "ok" });
+                            levelModel.getFirstRank((err, ranker) => {
+                                console.log(ranker);
+                                res.render('home', { message: "ok" });
+                            });
                         }
                     });
                 }
@@ -109,10 +145,16 @@ app.post('/register', (req, res) => {
             } else {
                 req.logIn(user, (err, done) => {
                     if (err) {
-                        res.render('home',{err:"end"});
+                        levelModel.getFirstRank((err, ranker) => {
+                            console.log(ranker);
+                            res.render('home', { err: "not ok",ranker });
+                        });
                         throw err;
                     } else {
-                        res.render('home', { message: "ok" });
+                        levelModel.getFirstRank((err, ranker) => {
+                            console.log(ranker);
+                            res.render('home', { message: "ok" });
+                        });
                     }
                 });
             }

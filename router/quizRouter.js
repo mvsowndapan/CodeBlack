@@ -8,7 +8,7 @@ quizRouter.post('/mark', (req, res) => {
         var h = {
             quizno: req.body.quizno,
             status: req.body.status,
-            mark: req.body.mark,
+            points: req.body.mark,
         };
         console.log(req.body);
         data.quizTest.push(h);

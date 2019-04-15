@@ -1,5 +1,7 @@
 const express = require('express'),
     levelModel = require('../models/levelModel'),
+    gameModel = require('../models/gameModel'),
+    userModel = require('../models/userModel'),
     exec = require('child_process').exec,
     fs = require('fs');
 codeRouter = express.Router();
@@ -52,6 +54,18 @@ codeRouter.post('/submit',(req,res)=>{
       data.save();
       res.json({result:"updated"});
     });
+});
+
+codeRouter.post('/game',(req,res)=>{
+   console.log(req.body);
+   var h = {
+       email:req.body.username,
+       link:req.body.link
+   };
+   gameModel.create(h);
+   userModel.getDetails(req.user, (err, programmer) => {
+    res.render('program', { layout: 'dashpanel', programmer });
+  });
 });
 module.exports = codeRouter;
 

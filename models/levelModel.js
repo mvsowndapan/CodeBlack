@@ -13,7 +13,8 @@ const levelSchema = mongoose.Schema({
                 type:String
             },
             points:{
-                type:Number
+                type:Number,
+                default: 0
             },
             time:{
                 type:Date,
@@ -70,4 +71,10 @@ const levelModel = mongoose.model('levelData',levelSchema);
 levelModel.addQuizDetail = (newquiz,result) => {
     levelModel.create(newquiz,(err,quiz) => result(err,quiz));
 }
+levelModel.getFirstRank = (result)=>{
+    levelModel.aggregate([{$sort:{globelPoints:-1}},{$limit:10}],(err,data)=>{
+         result(null,data);
+    });
+};
+
 module.exports = levelModel;
