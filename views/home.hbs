@@ -16,9 +16,9 @@
 
 <body>
   {{#if err}}
- <div class="alert-danger text-center">Registration failed</div>
+ <div class="alert-danger text-center">{{err}}</div>
   {{else if message}}
-  <div class="alert-success text-center">Registration Success</div>
+  <div class="alert-success text-center">{{message}}</div>
   {{/if}}
   <!-- mainImage -->
   <div class="container-custom">
@@ -415,9 +415,9 @@
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 ">
           <div class="footer-widget ">
             <h3 class="footer-title">Subscribe</h3>
-            <form>
+            <form action="/subscribe" method="POST">
               <div class="newsletter-form">
-                <input class="form-control" placeholder="Enter Your Email address" type="text">
+                <input class="form-control" name="email" placeholder="Enter Your Email address" type="text">
                 <button class="btn btn-default btn-sm" type="submit">Go</button>
               </div>
             </form>

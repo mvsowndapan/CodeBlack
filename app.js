@@ -13,6 +13,7 @@ const express = require('express'),
     codeRouter = require('./router/codeRouter'),
     levelModel = require('./models/levelModel'),
     quotesModel = require('./models/quotesModel'),
+    subscribeModel = require('./models/subscribeModel'),
     hbs = require('hbs'),
     app = express();
 
@@ -22,7 +23,7 @@ app.listen(port, () => {
     console.log("Server Started in", process.env.NODE_ENV);
 });
 
-mongoose.connect('mongodb://root:root1234@ds239936.mlab.com:39936/codeblack', {
+mongoose.connect('mongodb://localhost:27017/codeblack', {
     useNewUrlParser: true
 }).then((data) => {
     console.log("connection sucessfull");
@@ -111,7 +112,7 @@ app.post('/register', (req, res) => {
         if (req.body.username === data.username) {
             levelModel.getFirstRank((err, ranker) => {
                 console.log(ranker);
-                res.render('home', { err: "not ok",ranker });
+                res.render('home', { err: "Registration Not Successfull",ranker });
             });
             
         }
@@ -121,7 +122,7 @@ app.post('/register', (req, res) => {
                 if (err) {
                     levelModel.getFirstRank((err, ranker) => {
                         console.log(ranker);
-                        res.render('home', { err: "not ok",ranker });
+                        res.render('home', { err: "Registration Not Successfull",ranker });
                     });
                 } else {
                     req.logIn(user, (err, done) => {
@@ -131,7 +132,7 @@ app.post('/register', (req, res) => {
                         } else {
                             levelModel.getFirstRank((err, ranker) => {
                                 console.log(ranker);
-                                res.render('home', { message: "ok" });
+                                res.render('home', { message: "Registration Successfull" });
                             });
                         }
                     });
@@ -141,19 +142,19 @@ app.post('/register', (req, res) => {
     }).catch(err => {
         authenticate.addUser(req.body, (err, user) => {
             if (err) {
-                res.render('home', { err: "end" });
+                res.render('home', { err: "Registration Not Successfull" });
             } else {
                 req.logIn(user, (err, done) => {
                     if (err) {
                         levelModel.getFirstRank((err, ranker) => {
                             console.log(ranker);
-                            res.render('home', { err: "not ok",ranker });
+                            res.render('home', { err: "Registration Not Successfull",ranker });
                         });
                         throw err;
                     } else {
                         levelModel.getFirstRank((err, ranker) => {
                             console.log(ranker);
-                            res.render('home', { message: "ok" });
+                            res.render('home', { message: "Registration Successfull" });
                         });
                     }
                 });
@@ -162,6 +163,13 @@ app.post('/register', (req, res) => {
     });
 });
 
+app.post('/subscribe',(req,res)=>{
+    var newSub = {
+      email:req.body.email
+    };
+    subscribeModel.create(newSub);
+    res.render('home',{message:"Thanks for subscribing"});
+})
 function loginInCheck(req, res, next) {
     if (req.user) next();
     else res.render('home');
