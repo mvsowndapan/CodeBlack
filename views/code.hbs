@@ -3,6 +3,14 @@
 <head>
     <link rel="stylesheet" href="../../css/external/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/code.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: monospace;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,7 +38,17 @@
                         <div class="smalltext">Seconds</div>
                     </div>
                 </div><br><br>
-                <a href="/dashBoardRouter/program" class="btn btn-outline-danger">End Test</a>
+                <label class="text-center text-info">Note :: Submit the program before the Ending the test.</label>
+                <form action="/codeRouter/end" method="POST">
+                    <input type="hidden" value=" " name="pm1" id="p1" />
+                    <input type="hidden" value=" " name="pm2" id="p2" />
+                    <input type="hidden" value=" " name="pm3" id="p3" />
+                    <input type="hidden" value=" " name="pm4" id="p4" />
+                    <input type="hidden" value=" " name="pm5" id="p5" />
+                    <input type="hidden" value=" " name="t1" id="t" />
+                    <input type="hidden" name="email" value="{{programmer.username}}">
+                    <button type= "submit" class="btn btn-outline-danger">End Test</button>
+                </form>
                 <div id="hms" style="visibility: hidden;">02:00:00</div>
             </div>
         </div>
@@ -70,9 +88,10 @@
                                 </div>
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
-                                        <p>Write a Program to print this pattern</p>
-                                        <footer>*<br>**<br>***</footer>
+                                        <p>Write a Program to print this pattern<br></p>
                                     </blockquote>
+                                    <p class="card-text">Note :: Only odd number inputs</p>
+                                    <footer class="card-footer">" abcabbcbccacaababc "<br></footer>
                                 </div>
                             </div>
                             <!--  -->
@@ -83,16 +102,16 @@
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:5</h5>
+                                            <p class="card-text">abcdeabccdebcddeacdeeabdeaabceabbcdabcde<br></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:-1</h5>
+                                            <p class="card-text">-a-a-a-a<br><br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +135,7 @@
                                     <input type="hidden" id="email" value="{{programmer.username}}">
                                     <button type="submit" id="submit-1" class="btn btn-outline-success">Submit</button>
                                     <button id="submitResponse-1" class="btn btn-light text-success" disabled>Code
-                                        submitted.End The test</button>
+                                        submitted.</button>
                                 </div>
                             </div>
                         </div>
@@ -127,32 +146,8 @@
                             <div class="card-header">
                                 Ⓡⓔⓢⓤⓛⓣ
                             </div>
-                            <div class="card-body">
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p1-t-0"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p1-t-1"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p1-t-2"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
+                            <div class="card-body" id="tc-1">
+                                {{!-- testcase failed --}}
                             </div>
                         </div>
                     </div>
@@ -176,9 +171,10 @@
                                 </div>
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
-                                        <p>Write a Program to print this pattern</p>
-                                        <footer>*<br>**<br>***</footer>
+                                        <p>Write a Program to print this pattern<br></p>
                                     </blockquote>
+                                    <p class="card-text">Note :: series1 + series2 + series3 = Series</p>
+                                    <footer class="card-footer">" 0 0 1 1 1 3 2 8 3 21 5 55 8 144 13 377"<br></footer>
                                 </div>
                             </div>
                             <!--  -->
@@ -190,15 +186,15 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <p class="card-text"> 0 0 1 1 1<br></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:6</h5>
+                                            <p class="card-text"> 0 0 1 1 1 3 2 8 3 21 5 55 8<br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -222,7 +218,7 @@
                                     <input type="hidden" id="email" value="{{programmer.username}}">
                                     <button type="submit" id="submit-2" class="btn btn-outline-success">Submit</button>
                                     <button id="submitResponse-2" class="btn btn-light text-success" disabled>Code
-                                        submitted.End The test</button>
+                                        submitted.</button>
                                 </div>
                             </div>
                         </div>
@@ -233,32 +229,8 @@
                             <div class="card-header">
                                 Ⓡⓔⓢⓤⓛⓣ
                             </div>
-                            <div class="card-body">
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p2-t-0"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p2-t-1"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p2-t-2"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
+                            <div class="card-body" id="tc-2">
+                                {{!--testcase 2  --}}
                             </div>
                         </div>
                     </div>
@@ -281,9 +253,11 @@
                                 </div>
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
-                                        <p>Write a Program to print this pattern</p>
-                                        <footer>*<br>**<br>***</footer>
+                                        <p>Expression Validation<br></p>
                                     </blockquote>
+                                    <p class="card-text">Note :: Includes all Kinds of Operators</p>
+                                    <footer class="card-footer">"(a+b)*(b << d)"<br>
+                                    </footer>
                                 </div>
                             </div>
                             <!--  -->
@@ -294,16 +268,16 @@
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:(a+b</h5>
+                                            <p class="card-text">Invalid<br></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:(a >> b)</h5>
+                                            <p class="card-text">Valid<br></p>
                                         </div>
                                     </div>
                                 </div>
@@ -327,7 +301,7 @@
                                     <input type="hidden" id="email" value="{{programmer.username}}">
                                     <button type="submit" id="submit-3" class="btn btn-outline-success">Submit</button>
                                     <button id="submitResponse-3" class="btn btn-light text-success" disabled>Code
-                                        submitted.End The test</button>
+                                        submitted.</button>
                                 </div>
                             </div>
                         </div>
@@ -338,32 +312,8 @@
                             <div class="card-header">
                                 Ⓡⓔⓢⓤⓛⓣ
                             </div>
-                            <div class="card-body">
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p3-t-0"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p3-t-1"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p3-t-2"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
+                            <div class="card-body" id="tc-3">
+                                {{!-- 3 --}}
                             </div>
                         </div>
                     </div>
@@ -386,9 +336,10 @@
                                 </div>
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
-                                        <p>Write a Program to print this pattern</p>
-                                        <footer>*<br>**<br>***</footer>
+                                        <p>Expand to their Powers<br></p>
                                     </blockquote>
+                                    <p class="card-text">Note :: Do you Know Async ?</p>
+                                    <footer class="card-footer">" abcabcabcab "<br></footer>
                                 </div>
                             </div>
                             <!--  -->
@@ -399,16 +350,16 @@
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:a2a4b3</h5>
+                                            <p class="card-text"> aabaababa </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:a0b2</h5>
+                                            <p class="card-text"> 0bb </p>
                                         </div>
                                     </div>
                                 </div>
@@ -432,7 +383,7 @@
                                     <input type="hidden" id="email" value="{{programmer.username}}">
                                     <button type="submit" id="submit-4" class="btn btn-outline-success">Submit</button>
                                     <button id="submitResponse-4" class="btn btn-light text-success" disabled>Code
-                                        submitted.End The test</button>
+                                        submitted.</button>
                                 </div>
                             </div>
                         </div>
@@ -443,32 +394,8 @@
                             <div class="card-header">
                                 Ⓡⓔⓢⓤⓛⓣ
                             </div>
-                            <div class="card-body">
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p4-t-0"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p4-t-1"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p4-t-2"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
+                            <div class="card-body" id="tc-4">
+                                {{!-- testcase 4 --}}
                             </div>
                         </div>
                     </div>
@@ -491,9 +418,10 @@
                                 </div>
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0">
-                                        <p>Write a Program to print this pattern</p>
-                                        <footer>*<br>**<br>***</footer>
+                                        <p>Encrypt<br></p>
                                     </blockquote>
+                                    <p class="card-text">Hint :: Write all the alphabets and think simply</p>
+                                    <footer class="card-footer">" bdfh "<br></footer>
                                 </div>
                             </div>
                             <!--  -->
@@ -504,16 +432,16 @@
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:hij</h5>
+                                            <p class="card-text">ikm</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Input:3</h5>
-                                            <p class="card-text">*<br>**<br>***</p>
+                                            <h5 class="card-title">Input:p</h5>
+                                            <p class="card-text">q</p>
                                         </div>
                                     </div>
                                 </div>
@@ -537,7 +465,7 @@
                                     <input type="hidden" id="email" value="{{programmer.username}}">
                                     <button type="submit" id="submit-5" class="btn btn-outline-success">Submit</button>
                                     <button id="submitResponse-5" class="btn btn-light text-success" disabled>Code
-                                        submitted.End The test</button>
+                                        submitted.</button>
                                 </div>
                             </div>
                         </div>
@@ -548,32 +476,8 @@
                             <div class="card-header">
                                 Ⓡⓔⓢⓤⓛⓣ
                             </div>
-                            <div class="card-body">
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p5-t-0"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p5-t-1"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
-                                <div class="card">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p id="p5-t-2"></p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                {{!--  --}}
+                            <div class="card-body" id="tc-5">
+                                {{!-- testcase 5 --}}
                             </div>
                         </div>
                     </div>

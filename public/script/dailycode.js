@@ -1,6 +1,6 @@
 $(document).ready(()=>{
     $('#submitResponse').hide();
-});
+}); 
 var usermark = 0;
 $('#run-1').on('click', event => {
     var c = $('#t-1').val();
@@ -13,11 +13,18 @@ $('#run-1').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-1').val();
-        var prob1Testcase = ["1", "1", "1"];
-            for (var i = 0; i < 3; i++)
-                if (result[i] ==  prob1Testcase[i]){
-                    document.getElementById('p1-t-' + i).innerHTML = "testcase passed";usermark+=3}
-                else document.getElementById('p1-t-' + i).innerHTML = "testcase failed";
+        var prob1Testcase = ["1", "3", "1"];
+        var testcaseresult =' ';
+        for(var i=0;i<3;i++){
+            if(result[i]==prob1Testcase[i]){
+                testcaseresult+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-kiss-wink-heart text-success"></i>&nbsp; Testcase Passed   +3Mark</p></blockquote></div></div> ';
+                usermark +=3;
+            }
+            else{
+                testcaseresult+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-grin-beam-sweat text-Danger"></i>&nbsp; Testcase Failed</p></blockquote></div></div> ';
+            }
+        }
+        $('#testcase').html(testcaseresult);
     });
 });
  

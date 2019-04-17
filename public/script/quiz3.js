@@ -31,11 +31,17 @@ $(function(){
     var questionNo = 0;
     var correctCount = 0;
     var q = [
-        {'Q':'name?', 'A':1,'C':['seccubus','asshole','fucker']},
-        {'Q':'age', 'A':3,'C':['infinite','--','no words']},
-        {'Q':'foundation', 'A':1,'C':['cosmic','cosmic1','cosmic2']},
-        {'Q':'r u ?', 'A':2,'C':['virgin','prostitute','dont know']},
-        {'Q':'three size ?', 'A':3,'C':[' 0 0 0 ','1 1 1 ','2 2 2 2']}
+        {'Q':'Action movie Terminator used samples of Cobol source code for text shown in the ....', 'A':3,'C':['Vision automatic Display','Code Generator','None of these']},
+        {'Q':'Apart from Dennis Ritchie who the other person who contributed in design of C language.', 'A':3,'C':[' Dennis Kernighan','Kernighan',' Brain Kernighan']},
+        {'Q':'C is successor of which programming language?', 'A':1,'C':['None Of these','cobol','Milk']},
+        {'Q':'What are enumerations?', 'A':3,'C':[' list of integer constants with characters ',' list of integer constants with index ',' list of integer constants with name']},
+        {'Q':'Which operator is used to continue the definition of macro in the next line? ', 'A':3,'C':['\/\/','\/','\\']},
+        {'Q':' Is FILE a built-in data type?', 'A':1,'C':['No','Yes','None of these']},
+        {'Q':'How can you print a \ (backslash) using any of the printf() family of functions.', 'A':2,'C':['\/\/','\\','\/']},
+        {'Q':'which is not token ?', 'A':1,'C':['Variables','Keyword','String literal']},
+        {'Q':'Does a built-in header file contains built-in function definition?', 'A':2,'C':['Yes','No','None of these']},
+        {'Q':'When to user -> (arrow) operator.', 'A':3,'C':['access structure elements','access union elements','None of these']}
+    
     ];
 
  

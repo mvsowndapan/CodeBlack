@@ -10,8 +10,9 @@ var usermark2 = 0;
 var usermark3 = 0;
 var usermark4 = 0;
 var usermark5 = 0;
+var usertotalMark = 0;
 // first one
-
+ 
 $('#run-1').on('click', event => {
     var c = $('#t-1').val();
     var name = $('#u-1').val();
@@ -23,11 +24,18 @@ $('#run-1').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-1').val();
-        var prob1Testcase = ["1", "1", "1"];
+        var tc1 = '';
+        var prob1Testcase = ["Only Odd Inputs", "-a-b-c-d-e-a-b-c-c-d-e-b-c-d-d-e-a-c-d-e-e-a-b-d-e-a-a-b-c-e-a-b-b-c-d-a-b-c-d-e-", "0"];
             for (var i = 0; i < 3; i++)
-                if (result[i] ==  prob1Testcase[i])
-                    {document.getElementById('p1-t-' + i).innerHTML = "testcase passed";usermark1+=3;}
-                else document.getElementById('p1-t-' + i).innerHTML = "testcase failed";
+                if (result[i] ==  prob1Testcase[i]){
+                    tc1+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-kiss-wink-heart text-success"></i>&nbsp; Testcase Passed   +3Mark</p></blockquote></div></div> ';
+                    usermark1 +=3;
+                }
+                else{
+                    tc1+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-grin-beam-sweat text-Danger"></i>&nbsp; Testcase Failed</p></blockquote></div></div> ';
+                }
+        usertotalMark += usermark1;
+        $('#tc-1').html(tc1);
     });
 });
  
@@ -43,6 +51,8 @@ $('#submit-1').on('click', event => {
         console.log("updated");
         $('#submit-1').attr('disabled',true);
         $('#submitResponse-1').show();
+        $('#p1').attr('value',usermark1);
+        $('#t').attr('value',usertotalMark);
     });
 });
 // 
@@ -59,13 +69,19 @@ $('#run-2').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-2').val();
-        var prob2Testcase = ["2", "2", "2"];
-        console.log("reaching");
-            for (var i = 0; i < 3; i++)
-                if (result[i] == prob2Testcase[i])
-                   {document.getElementById('p2-t-' + i).innerHTML = "testcase passed";usermark2+=3;}
-                else document.getElementById('p2-t-' + i).innerHTML = "testcase failed";
-
+        var prob2Testcase = [" ", " 0", " 0 0 1"];
+        var tc2='';
+        for (var i = 0; i < 3; i++)
+        if (result[i] ==  prob2Testcase[i]){
+            tc2+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-kiss-wink-heart text-success"></i>&nbsp; Testcase Passed   +3Mark</p></blockquote></div></div> ';
+            usermark2 +=3;
+        }
+        else{
+            tc2+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-grin-beam-sweat text-Danger"></i>&nbsp; Testcase Failed</p></blockquote></div></div> ';
+        
+        }
+        usertotalMark += usermark2;
+       $('#tc-2').html(tc2);
     });
 });
 $('#submit-2').on('click', event => {
@@ -80,6 +96,8 @@ $('#submit-2').on('click', event => {
         console.log("updated");
         $('#submit-2').attr('disabled',true);
         $('#submitResponse-2').show();
+        $('#p2').attr('value',usermark2);
+        $('#t').attr('value',usertotalMark);
     });
 });
 // 
@@ -96,13 +114,18 @@ $('#run-3').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-3').val();
-        var prob2Testcase = ["3", "3", "3"];
-        console.log("reaching");
-            for (var i = 0; i < 3; i++)
-                if (result[i] == prob2Testcase[i])
-                    {document.getElementById('p3-t-' + i).innerHTML = "testcase passed";usermark3+=3;}
-                else document.getElementById('p3-t-' + i).innerHTML = "testcase failed";
-
+        var prob3Testcase = ["Valid", "Invalid", "Invalid"];
+        var tc3='';
+        for (var i = 0; i < 3; i++)
+        if (result[i] ==  prob3Testcase[i]){
+            tc3+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-kiss-wink-heart text-success"></i>&nbsp; Testcase Passed   +3Mark</p></blockquote></div></div> ';
+            usermark3 +=3;
+        }
+        else{
+            tc3+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-grin-beam-sweat text-Danger"></i>&nbsp; Testcase Failed</p></blockquote></div></div> ';
+        }
+        usertotalMark += usermark3;
+       $('#tc-3').html(tc3);
     });
 });
 $('#submit-3').on('click', event => {
@@ -117,6 +140,8 @@ $('#submit-3').on('click', event => {
         console.log("updated");
         $('#submit-3').attr('disabled',true);
         $('#submitResponse-3').show();
+        $('#p3').attr('value',usermark3);
+        $('#t').attr('value',usertotalMark);
     });
 });
 // fourth
@@ -132,13 +157,18 @@ $('#run-4').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-4').val();
-        var prob2Testcase = ["4", "4", "4"];
-        console.log("reaching");
-            for (var i = 0; i < 3; i++)
-                if (result[i] == prob2Testcase[i])
-                    {document.getElementById('p4-t-' + i).innerHTML = "testcase passed";usermark4+=3;}
-                else document.getElementById('p4-t-' + i).innerHTML = "testcase failed";
-
+        var prob4Testcase = [" 000 ", " -ab0 ", " abc "];
+        var tc4='';
+        for (var i = 0; i < 3; i++)
+        if (result[i] ==  prob4Testcase[i]){
+            tc4+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-kiss-wink-heart text-success"></i>&nbsp; Testcase Passed   +3Mark</p></blockquote></div></div> ';
+            usermark4 +=3;
+        }
+        else{
+            tc4+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-grin-beam-sweat text-Danger"></i>&nbsp; Testcase Failed</p></blockquote></div></div> ';
+        }
+       usertotalMark += usermark4;
+       $('#tc-4').html(tc4);
     });
 }); 
 $('#submit-4').on('click', event => {
@@ -153,6 +183,8 @@ $('#submit-4').on('click', event => {
         console.log("updated");
         $('#submit-4').attr('disabled',true);
         $('#submitResponse-4').show();
+        $('#p4').attr('value',usermark4);
+        $('#t').attr('value',usertotalMark);
     });
 });
 // 
@@ -169,13 +201,18 @@ $('#run-5').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-5').val();
-        var prob2Testcase = ["5", "5", "5"];
-        console.log("reaching");
-            for (var i = 0; i < 3; i++)
-                if (result[i] == prob2Testcase[i])
-                    {document.getElementById('p5-t-' + i).innerHTML = "testcase passed";usermark5+=3;}
-                else document.getElementById('p5-t-' + i).innerHTML = "testcase failed";
-
+        var prob5Testcase = [" zb ", " Only Alphabets ", " a "];
+        var tc5='';
+        for (var i = 0; i < 3; i++)
+        if (result[i] ==  prob5Testcase[i]){
+            tc5+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-kiss-wink-heart text-success"></i>&nbsp; Testcase Passed   +3Mark</p></blockquote></div></div> ';
+            usermark5 +=3;
+        }
+        else{
+            tc5+='<div class="card"><div class="card-body"><blockquote class="blockquote mb-0"><p> <i class="fa fa-grin-beam-sweat text-Danger"></i>&nbsp; Testcase Failed</p></blockquote></div></div> ';
+        }
+       usertotalMark += usermark5;
+       $('#tc-5').html(tc5);
     });
 });
 $('#submit-5').on('click', event => {
@@ -190,6 +227,8 @@ $('#submit-5').on('click', event => {
         console.log("updated");
         $('#submit-5').attr('disabled',true);
         $('#submitResponse-5').show();
+        $('#p5').attr('value',usermark5);
+        $('#t').attr('value',usertotalMark);
     });
 });
 // 

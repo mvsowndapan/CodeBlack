@@ -27,15 +27,20 @@ $(function(){
     }).ajaxStop(function () {
     	loading.hide();
     });
-    
+     
     var questionNo = 0;
     var correctCount = 0;
     var q = [
-        {'Q':'1 = ?', 'A':3,'C':['1','one','None of these']},
-        {'Q':'1+2 ?', 'A':3,'C':['1','0','3']},
-        {'Q':'1+100 ?', 'A':3,'C':['201','202','101']},
-        {'Q':'1+101 ?', 'A':3,'C':['402','403','102']},
-        {'Q':'1+3 ?', 'A':4,'C':['5','4','2']}
+        {'Q':'Action movie Terminator used samples of Cobol source code for text shown in the ....', 'A':3,'C':['Vision automatic Display','Code Generator','None of these']},
+        {'Q':'Actually the name of the this site also indicates a Medical drama based on the documentation of ...', 'A':2,'C':['Albert Richie','Ryan McGarry','James Geidian']},
+        {'Q':'Solve (x+4)(x-4) = 9 Hint:Algebric method', 'A':1,'C':['x = 5 and x=-5','x=3','x = -4 and x = -4']},
+        {'Q':'Microcode in particular processor implementation is sometimes called a ....', 'A':3,'C':['Micro','MicroCode','microprogram']},
+        {'Q':' What are the valid places for the keyword break to appear...', 'A':3,'C':[' looping control','switch statement','None of these']},
+        {'Q':'What is a dangling pointer? ..........', 'A':1,'C':['initially holding valid address','Finally holding valid address','Handling address anywhere']},
+        {'Q':'What is a self-referential structure?', 'A':2,'C':['structure containing the same structure pointer variable as its pointer','structure containing the same structure pointer variable as its element','structure containing the same structure pointer variable as its index']},
+        {'Q':'Describe the file opening mode “w+”.', 'A':3,'C':['Writing for all types. ','Reading for all types','both for reading and writing. ']},
+        {'Q':' What is reminder for 5.0 % 2?', 'A':1,'C':['Error','1','1.0']},
+        {'Q':'Can the main() function left empty?', 'A':3,'C':['Error','No','None of these']}
     ];
 
  

@@ -45,27 +45,46 @@ codeRouter.post('/program', (req, res) => {
     });
 });
 
-codeRouter.post('/submit',(req,res)=>{
+codeRouter.post('/submit', (req, res) => {
     console.log(req.body.mark);
-    levelModel.findOne({username:req.body.email}).then(data =>{
+    levelModel.findOne({ username: req.body.email }).then(data => {
         console.log(data.programPoints);
-      data.programPoints +=req.body.mark;
-      data.globelPoints += req.body.mark;
-      data.save();
-      res.json({result:"updated"});
+        data.programPoints += req.body.mark;
+        data.globelPoints += req.body.mark;
+        data.save();
+        res.json({ result: "updated" });
     });
 });
 
-codeRouter.post('/game',(req,res)=>{
-   console.log(req.body);
-   var h = {
-       email:req.body.username,
-       link:req.body.link
-   };
-   gameModel.create(h);
-   userModel.getDetails(req.user, (err, programmer) => {
-    res.render('program', { layout: 'dashpanel', programmer });
-  });
+codeRouter.post('/end', (req, res) => {
+    console.log(req.body);
+    levelModel.findOne({ username: req.body.email }).then(data => {
+        var newMark = {
+            problem1: req.body.pm1,
+            problem2: req.body.pm2,
+            problem3: req.body.pm3,
+            problem4: req.body.pm4,
+            problem5: req.body.pm5,
+            points: req.body.t1
+        };
+        data.programmingTrack.push(newMark);
+        data.save();
+        userModel.getDetails(req.user, (err, programmer) => {
+            res.render('program', { layout: 'dashpanel', programmer });
+        });
+    });
+});
+
+codeRouter.post('/game', (req, res) => {
+    console.log(req.body);
+    var h = {
+        email: req.body.username,
+        link: req.body.link
+    };
+    gameModel.create(h);
+    userModel.getDetails(req.user, (err, programmer) => {
+        res.render('program', { layout: 'dashpanel', programmer });
+    });
 });
 module.exports = codeRouter;
 

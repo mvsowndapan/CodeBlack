@@ -1,48 +1,145 @@
-<div class="container challenges-pos">
-  <h3 class="text-center">Quiz </h3>
-  <br>
-  <div class="row">
-    <div class="col-md-4 card">
-      <img class="card-img-top" src="../../img/dashboard/challenges/q1.jpeg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Level {{data.level}}</h5>
-        {{#ifCond data.level}}
-        <a href="/dashBoardRouter/quizQuestion" class="btn btn-outline-info">Take challenge</a>
-        {{else}}
-        <button class="btn btn-outline-info" disabled>Comming soon..</button>
-        {{/ifCond}}
+<div class="container tab-pos">
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#1" role="tab">Quiz</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#2" role="tab">Your Marks</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" role="tablist">
+    <div class="tab-pane active" id="1" role="tabpanel">
+      {{!--  --}}<br>
+      <div class="col-md-4 card">
+        <img class="card-img-top" src="../../img/dashboard/challenges/q1.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Level {{data.level}}</h5>
+          {{#ifCond data.level}}
+          <a href="/dashBoardRouter/quizQuestion" class="btn btn-outline-info">Take challenge</a>
+          {{else}}
+          <button class="btn btn-outline-info" disabled>Comming soon..</button>
+          {{/ifCond}}
+        </div>
       </div>
+      {{!--  --}}
     </div>
-    <div class="col-md-8" style="padding:0px;">
-      <h5>Text result</h5>
+    <div class="tab-pane" id="2" role="tabpanel" style="font-family:monospace">
+      {{!--  --}}<br>
+      <h5 class="text-center text-success">Test result</h5>
       <div class="card" style="height:400px;overflow:scroll;">
         <div class="card-body">
           {{#each data.quizTest}}
-          <div class="card text-center">
-            <div class="card-header bg-info text-white">Test {{quizno}}</div>
-            <div class="card-body">
-              <h5 class="card-title">Points {{points}}</h5>
-              {{#ifMark1 points}}
-              <p class="card-text">Why this very poor performance ?</p>
-              {{/ifMark1}}
-              {{#ifMark2 points}}
-              <p class="card-text">Poor performance. Work Hard</p>
-              {{/ifMark2}}
-              {{#ifMark3 points}}
-              <p class="card-text">Good Keep it up </p>
-              {{/ifMark3}}
+          {{!--  --}}
+          <div class="card card-user">
+            <div class="card-header">
+              <h5 class="card-title">Week 1</h5>
             </div>
-            <div class="card-footer text-muted">
-              {{time}}
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-7">
+                  {{!-- table --}}
+                  <table class="table table-striped table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Quiz No</th>
+                        <th scope="col">Mark</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{quizno}}</th>
+                        <td>{{points}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  {{!-- table --}}
+                </div>
+                <div class="col-md-5 text-center">
+                  <label for="points" class="card-text">Points</label>
+                  <h1>{{points}}</h1><br>
+                  <label for="points" class="card-text">Comment</label>
+                  {{#ifMark1 points}}
+                  <p class="card-text">Why this very poor performance ?</p>
+                  {{/ifMark1}}
+                  {{#ifMark2 points}}
+                  <p class="card-text">Poor performance. Work Hard</p>
+                  {{/ifMark2}}
+                  {{#ifMark3 points}}
+                  <p class="card-text">Good Keep it up </p>
+                  {{/ifMark3}}
+                  <label for="points" class="card-text">Time</label>
+                  <p>{{time}}</p><br>
+                </div>
+                {{!--  --}}
+              </div>
             </div>
           </div>
+          {{!--  --}}
           {{/each}}
         </div>
       </div>
+      {{!--  --}}
     </div>
   </div>
 
+
+
+
+
+
+  {{!--  --}}
+  {{!-- <div class="container challenges-pos">
+    <h3 class="text-center">Quiz </h3>
+    <br>
+    <div class="row">
+      <div class="col-md-4 card">
+        <img class="card-img-top" src="../../img/dashboard/challenges/q1.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Level {{data.level}}</h5>
+          {{#ifCond data.level}}
+          <a href="/dashBoardRouter/quizQuestion" class="btn btn-outline-info">Take challenge</a>
+          {{else}}
+          <button class="btn btn-outline-info" disabled>Comming soon..</button>
+          {{/ifCond}}
+        </div>
+      </div>
+      <div class="col-md-8" style="padding:0px;">
+        <h5>Text result</h5>
+        <div class="card" style="height:400px;overflow:scroll;">
+          <div class="card-body">
+            {{#each data.quizTest}}
+            <div class="card text-center">
+              <div class="card-header bg-info text-white">Test {{quizno}}</div>
+              <div class="card-body">
+                <h5 class="card-title">Points {{points}}</h5>
+                {{#ifMark1 points}}
+                <p class="card-text">Why this very poor performance ?</p>
+                {{/ifMark1}}
+                {{#ifMark2 points}}
+                <p class="card-text">Poor performance. Work Hard</p>
+                {{/ifMark2}}
+                {{#ifMark3 points}}
+                <p class="card-text">Good Keep it up </p>
+                {{/ifMark3}}
+              </div>
+              <div class="card-footer text-muted">
+                {{time}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+ --}}
   <!--   Core JS Files   -->
+
+
+  <script src="../../script/external/jquery-slim.min.js"></script>
+  <script src="../../script/external/tab.js"></script>
+  <script src="../../script/external/util.js"></script>
   <script src="../../script/external/jquery.min.js"></script>
   <script src="../../script/external/bootstrap.min.js"></script>
   <!-- Control Center for Now Ui Dashboard: for mobile -->

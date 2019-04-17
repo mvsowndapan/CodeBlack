@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="../../css/code.css">
   <link rel="stylesheet" href="../../css/q.css">
   <title>Tab</title>
+   <style>
+    body {
+      font-family: monospace;
+    }
+  </style>
 </head>
 
 <body>
@@ -45,19 +50,19 @@
 
                 <div class="question bg-success text-light">
                   <h3><span class="label label-warning text-light" id="qid">1</span>
-                    <span id="question">1 = ?</span>
+                    <span id="question">Action movie Terminator used samples of Cobol source code for text shown in the .......</span>
                   </h3>
                 </div>
                 <ul>
                   <li class="ul-li">
                     <input class="ul-li-input" type="radio" id="f-option" name="selector" value="1">
-                    <label for="f-option" class="ul-li-label element-animation"> 1 </label>
+                    <label for="f-option" class="ul-li-label element-animation">Vision automatic Display</label>
                     <div class="check"></div>
                   </li>
 
                   <li class="ul-li">
                     <input class="ul-li-input" type="radio" id="s-option" name="selector" value="2">
-                    <label for="s-option" class="ul-li-label element-animation"> one </label>
+                    <label for="s-option" class="ul-li-label element-animation">Code Generator</label>
                     <div class="check">
                       <div class="inside"></div>
                     </div>
@@ -101,6 +106,7 @@
   </div>
   <br>
   <div class="container text-center">
+    <h5 class="text-info text-center">Note :: Click the submit button only after you answered all the question</h5>
     <form action="/quizRouter/mark" method="POST">
       <input name="username" type="hidden" value="{{programmer.username}}" />
       <input name="quizno" type="hidden" value="{{data.level}}" />

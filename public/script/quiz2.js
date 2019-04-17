@@ -31,11 +31,16 @@ $(function(){
     var questionNo = 0;
     var correctCount = 0;
     var q = [
-        {'Q':'How do you write "Hello World" in an alert box?', 'A':2,'C':['msg("Hello World");','alert("Hello World");','alertBox("Hello World");']},
-        {'Q':'How do you create a function in JavaScript?', 'A':3,'C':['function:myFunction()','function = myFunction()','function myFunction()']},
-        {'Q':'How to write an IF statement in JavaScript?', 'A':1,'C':['if (i == 5)','if i = 5 then','if i == 5 then']},
-        {'Q':'How does a FOR loop start?', 'A':2,'C':['for (i = 0; i <= 5)','for (i = 0; i <= 5; i++)','for i = 1 to 5']},
-        {'Q':'What is the correct way to write a JavaScript array?', 'A':3,'C':['var colors = "red", "green", "blue"','var colors = (1:"red", 2:"green", 3:"blue")','var colors = ["red", "green", "blue"]']}
+        {'Q':'Action movie Terminator used samples of Cobol source code for text shown in the ....', 'A':3,'C':['Vision automatic Display','Code Generator','None of these']},
+        {'Q':'(true + false) > 2 + true;', 'A':1,'C':['true','false','Error']},
+        {'Q':'"1" -- "1";', 'A':3,'C':['Error','0','2']},
+        {'Q':'[]+[]+\'codeblack\'.split(\'\');', 'A':2,'C':['"foo"','"f,o,o"','Cannot split']},
+        {'Q':'new Array(5).toString();', 'A':1,'C':['"...."','"1,2,3,4,5"','0,1,2,3,4']},
+        {'Q':'new String("CodeBlack") instanceof String;', 'A':2,'C':['false','true','Error']},
+        {'Q':' String(\'Hello\') == \'Hello\'', 'A':1,'C':['true','false','Error']},
+        {'Q':'"Code Black" instanceof String; ', 'A':3,'C':['Error','0','false']},
+        {'Q':'10>9>8 === true;', 'A':1,'C':['false','true','Error']},
+        {'Q':' NaN === NaN', 'A':1,'C':['false','true','Error']},
     ];
 
  

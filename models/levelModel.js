@@ -1,79 +1,94 @@
 const mongoose = require('mongoose');
 
 const levelSchema = mongoose.Schema({
-    username:{
-        type:String,
-        required:true
+    username: {
+        type: String,
+        required: true
     },
-    quizTest:[{
-            quizno:{
-                type:Number
-            },
-            status:{
-                type:String
-            },
-            points:{
-                type:Number,
-                default: 0
-            },
-            time:{
-                type:Date,
-                default:Date.now
-            }
+    quizTest: [{
+        quizno: {
+            type: Number
+        },
+        status: {
+            type: String
+        },
+        points: {
+            type: Number,
+            default: 0
+        },
+        time: {
+            type: Date,
+            default: Date.now
+        }
     }],
-    programmingTrack:[{
-            week:{
-                type:Number
-            },
-            status:{
-                type:String
-            },
-            points:{
-                type:Number
-            },
-            time:{
-                type:Date,
-                default:Date.now
-            }
+    programmingTrack: [{
+        problem1: {
+            type: Number,
+            default: 0
+        },
+        problem2: {
+            type: Number,
+            default: 0
+        },
+        problem3: {
+            type: Number,
+            default: 0
+        },
+        problem4: {
+            type: Number,
+            default: 0
+        },
+        problem5: {
+            type: Number,
+            default: 0
+        },
+        points: {
+            type: Number,
+            default: 0
+        },
+        time: {
+            type: Date,
+            default: Date.now
+        }
     }],
-    level:{
-        type:Number,
-        default:1
+    level: {
+        type: Number,
+        default: 1
     },
-    globelPoints:{
-        type:Number,
-        default: 0
-    },
-    quizPoints:{
+    globelPoints: {
         type: Number,
         default: 0
     },
-    programPoints:{
+    quizPoints: {
         type: Number,
         default: 0
     },
-    quotesPoints:{
-        type:Number,
+    programPoints: {
+        type: Number,
         default: 0
     },
-    likes:{
+    quotesPoints: {
         type: Number,
-        default:0
+        default: 0
     },
-    dislikes:{
+    likes: {
         type: Number,
-        default:0
+        default: 0
+    },
+    dislikes: {
+        type: Number,
+        default: 0
     }
 });
 
-const levelModel = mongoose.model('levelData',levelSchema);
- 
-levelModel.addQuizDetail = (newquiz,result) => {
-    levelModel.create(newquiz,(err,quiz) => result(err,quiz));
+const levelModel = mongoose.model('levelData', levelSchema);
+
+levelModel.addQuizDetail = (newquiz, result) => {
+    levelModel.create(newquiz, (err, quiz) => result(err, quiz));
 }
-levelModel.getFirstRank = (result)=>{
-    levelModel.aggregate([{$sort:{globelPoints:-1}},{$limit:10}],(err,data)=>{
-         result(null,data);
+levelModel.getFirstRank = (result) => {
+    levelModel.aggregate([{ $sort: { globelPoints: -1 } }, { $limit: 10 }], (err, data) => {
+        result(null, data);
     });
 };
 
