@@ -23,7 +23,7 @@ app.listen(port, () => {
     console.log("Server Started in", process.env.NODE_ENV);
 });
 
-mongoose.connect('mongodb://localhost:27017/codeblack', {
+mongoose.connect('mongodb://root:root1234@ds239936.mlab.com:39936/codeblack', {
     useNewUrlParser: true
 }).then((data) => {
     console.log("connection sucessfull");
