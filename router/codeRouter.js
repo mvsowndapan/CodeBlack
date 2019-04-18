@@ -16,7 +16,7 @@ codeRouter.post('/program', (req, res) => {
     fs.writeFile(user + "i.c", code, (err, input) => {
         if (err) throw err;
         console.log("successfully written inputfile");
-    });
+    }); 
     var o = [];
     exec("gcc " + user + "i.c", (err, stdout) => {
         console.log("compiled");

@@ -13,7 +13,7 @@ $('#run-1').on('click', event => {
         data: JSON.stringify({ code: c, name: name, pno: pno })
     }).done((result) => {
         var pno = $('#p-1').val();
-        var prob1Testcase = ["1", "3", "1"];
+        var prob1Testcase = ["1 2 ", "-1 -2 -3 -4 -5 ", "0"];
         var testcaseresult =' ';
         for(var i=0;i<3;i++){
             if(result[i]==prob1Testcase[i]){
